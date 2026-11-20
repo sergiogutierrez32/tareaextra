@@ -1,4 +1,5 @@
-const image = document.querySelector("#moving-image");
+(function () {
+	const image = document.querySelector("#moving-image");
 const container = image.parentElement;
 let position = 0;
 let direction = 1;
@@ -18,7 +19,7 @@ function moveImage(time) {
 			direction = 1;
 		}
 
-		image.style.transform = `translateX(${position - maxPosition / 2}px)`;
+		image.style.translate = `${position - maxPosition / 2}px 0`;
 	}
 
 	previousTime = time;
@@ -26,3 +27,4 @@ function moveImage(time) {
 }
 
 requestAnimationFrame(moveImage);
+})();
